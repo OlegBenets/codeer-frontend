@@ -72,6 +72,7 @@ async function getData(endpoint) {
             headers: createHeaders(),
         });
         const responseData = await response.json();
+        print('GET-Response:', responseData);
         return {
             ok: response.ok,
             status: response.status,
@@ -96,6 +97,7 @@ async function postData(endpoint, data) {
             body: data
         });
         const responseData = await response.json();
+        print('POST-Response:', responseData);
 
         return {
             ok: response.ok,
@@ -125,6 +127,7 @@ async function postDataWJSON(endpoint, data) {
         });
         
         const responseData = await response.json();
+        print('POSTWJSON-Response:', responseData);
         return {
             ok: response.ok,
             status: response.status,
@@ -152,6 +155,7 @@ async function patchDataWoFiles(endpoint, data) {
         });
 
         const responseData = await response.json();
+        print('PATCHFILES-Response:', responseData);
         return {
             ok: response.ok,
             status: response.status,
@@ -180,6 +184,7 @@ async function patchData(endpoint, formData) {
         });
 
         const responseData = await response.json();
+        print('PATCH-Response:', responseData);
         return {
             ok: response.ok,
             status: response.status,
@@ -202,6 +207,7 @@ async function deleteData(endpoint) {
             method: 'DELETE',
             headers: createHeaders(),
         });
+        print('DELETE-Response:', response);
 
         return {
             ok: response.ok,
